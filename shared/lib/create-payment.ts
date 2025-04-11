@@ -28,7 +28,7 @@ export async function createPayment(details: Props) {
         order_id: details.orderId.toString(),
       },
       mode: 'payment', 
-      success_url: 'http://localhost:3001/?paid'
+      success_url: `https://${process.env.VERCEL_URL || 'localhost:3000'}/?paid`
     });
 
     return session;
