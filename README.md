@@ -4,7 +4,7 @@ Full-stack e-commerce app for browsing, customizing, and ordering ice cream onli
 
 ## 🔗 Links
 
-🌐 App: pretty-ice-cream.vercel.app 
+🌐 App: https://pretty-ice-cream.vercel.app
   
 ## ✨ Features
 
