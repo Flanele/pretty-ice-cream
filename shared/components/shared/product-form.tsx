@@ -1,23 +1,29 @@
-'use client';
+"use client";
 
-import { ProductWithRelations } from '@/@types/prisma';
-import { useCartStore } from '@/shared/store';
-import React from 'react';
-import toast from 'react-hot-toast';
-import { ChooseCreamForm } from './choose-cream-form';
-import { ChooseProductForm } from './choose-product-form';
+import { ProductWithRelations } from "@/@types/prisma";
+import { useCartStore } from "@/shared/store";
+import React from "react";
+import toast from "react-hot-toast";
+import { ChooseCreamForm } from "./choose-cream-form";
+import { ChooseProductForm } from "./choose-product-form";
 
 interface Props {
   product: ProductWithRelations;
   onSubmit?: VoidFunction;
 }
 
-export const ProductForm: React.FC<Props> = ({ product, onSubmit: _onSubmit }) => {
-  const [addCartItem, loading] = useCartStore((state) => [state.addCartItem, state.loading]);
+export const ProductForm: React.FC<Props> = ({
+  product,
+  onSubmit: _onSubmit,
+}) => {
+  const [addCartItem, loading] = useCartStore((state) => [
+    state.addCartItem,
+    state.loading,
+  ]);
 
   const firstItem = product.items[0];
-  console.log(product)
-  console.log(firstItem)
+  console.log(product);
+  console.log(firstItem);
   const isPizzaForm = Boolean(firstItem.creamType);
 
   const onSubmit = async (productItemId?: number, ingredients?: number[]) => {
@@ -29,7 +35,7 @@ export const ProductForm: React.FC<Props> = ({ product, onSubmit: _onSubmit }) =
         ingredients,
       });
 
-      toast.success(product.name + ' added to your cart!');
+      toast.success(product.name + " added to your cart!");
 
       _onSubmit?.();
     } catch (err) {
@@ -61,5 +67,3 @@ export const ProductForm: React.FC<Props> = ({ product, onSubmit: _onSubmit }) =
     />
   );
 };
-
-

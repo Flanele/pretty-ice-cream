@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { ArrowLeft } from 'lucide-react';
-import { Title } from './title';
-import Link from 'next/link';
-import { cn } from '@/shared/lib/utils';
+import React from "react";
+import { Button } from "../ui/button";
+import { ArrowLeft } from "lucide-react";
+import { Title } from "./title";
+import Link from "next/link";
+import { cn } from "@/shared/lib/utils";
 
 interface Props {
   title: string;
@@ -12,9 +12,19 @@ interface Props {
   imageUrl?: string;
 }
 
-export const InfoBlock: React.FC<Props> = ({ className, title, text, imageUrl }) => {
+export const InfoBlock: React.FC<Props> = ({
+  className,
+  title,
+  text,
+  imageUrl,
+}) => {
   return (
-    <div className={cn(className, 'flex items-center justify-between w-[840px] gap-12')}>
+    <div
+      className={cn(
+        className,
+        "flex items-center justify-between w-[840px] gap-12",
+      )}
+    >
       <div className="flex flex-col">
         <div className="w-[445px]">
           <Title size="lg" text={title} className="font-extrabold" />
@@ -29,7 +39,10 @@ export const InfoBlock: React.FC<Props> = ({ className, title, text, imageUrl })
             </Button>
           </Link>
           <a href="">
-            <Button variant="outline" className="text-gray-500 border-gray-400 hover:bg-gray-50">
+            <Button
+              variant="outline"
+              className="text-gray-500 border-gray-400 hover:bg-gray-50"
+            >
               Refresh
             </Button>
           </a>

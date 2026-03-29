@@ -1,5 +1,5 @@
-import { cn } from '@/shared/lib/utils';
-import React from 'react';
+import { cn } from "@/shared/lib/utils";
+import React from "react";
 
 interface Props {
   text: string;
@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const ErrorText: React.FC<Props> = ({ text, className }) => {
-  return <p className={cn('text-red-500 text-sm', className)}>{text}</p>;
+  return <p className={cn("text-red-500 text-sm", className)}>{text}</p>;
 };
